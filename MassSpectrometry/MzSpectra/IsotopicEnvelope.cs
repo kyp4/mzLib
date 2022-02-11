@@ -31,7 +31,7 @@ namespace MassSpectrometry
 
         public double GetMostAbundantObservedIsotopicMass(List<(double mz, double intensity)> peaks, int charge)
         {
-            return (peaks.OrderByDescending(p => p.intensity).ToList()[0].Item1)* charge;
+            return (peaks.OrderByDescending(p => p.intensity).ToList().First().mz) * charge;
         }
 
         public override string ToString()
